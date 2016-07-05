@@ -1,0 +1,18 @@
+{
+    "elements": {
+        "ngcart-summary": {},
+        "ngcart-addtocart": {},
+        "ngcart-cart": {}
+    },
+    "attributes": {
+        "ng:controller": {
+            "context": "div"
+        },
+        "ng:repeat": {
+            "context": "tr"
+        },
+        "script": {
+            "context": "script"
+        }
+    }
+}

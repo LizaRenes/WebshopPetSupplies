@@ -1,0 +1,8 @@
+<p>Producten</p>
+    <div class="normal" ng-repeat="product in productData">
+        <button class="alignrightcart" ng-click="addProduct(product)" >Toevoegen aan winkelwagen</button>
+        <h2>{{product.name}}</h2>
+        <p> {{product.description}} - <em>&euro; {{product.price.toFixed(2)}}</em></p>
+           
+    </div>
+<br>

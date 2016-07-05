@@ -1,0 +1,40 @@
+<p>Winkelwagen</p>
+<div>
+    <div class="normal">
+        <div ng-repeat="product in cart" ng-repeat="count in counter">
+            <button class="alignrightcounter" ng-click="decrementCount($index)"> - </button>
+            <button class="alignrightcounter" ng-click="incrementCount($index)"> + </button>
+            <button class="alignleftremove" ng-click="deleteProduct($index)" > X </button>
+            <p class="alignleft"> {{product.name}}</p>
+            <p class="alignright"> {{ getCount($index) }} x &euro; {{product.price.toFixed(2)}} = &euro; {{ (getCount($index) * product.price.toFixed(2)).toFixed(2) }}</p>
+            <div style="clear: both;"></div>
+        </div>     
+    </div>
+    <div>
+        <h2 class="alignrightamount" ng-hide="isZero(totalPrice($index))" >Totaalbedrag: &euro; {{ totalPrice($index).toFixed(2)}}</h2>
+        <h2 ng-show="isZero(totalPrice($index))" >U heeft geen producten in uw winkelwagen.</h2>
+        <div style="clear: both;"></div>
+        <p class="alignleftRed">Op dit moment kunt u alleen producten toevoegen aan en verwijden uit uw winkelwagen. Wilt u de bestelling doorgeven, maak dan een printscreen van deze pagina en mail deze naar info@petsuppliesdierenwinkel.nl</p>
+    </div>
+</div>
+
+<div class="normal">
+    <input class="alignleftremove" type="text" ng-model="customerAll.firstName"/><p class="alignleft"> Voornaam: {{ firstName}}</p>
+    <div style="clear: both;"></div>
+    <input class="alignleftremove" type="text" ng-model="customerAll.lastName"/><p class="alignleft">Achternaam: {{ lastName}}</p>
+    <div style="clear: both;"></div>
+    <input class="alignleftremove" type="text" ng-model="customerAll.adress"/><p class="alignleft"> Adres: {{ adress}}</p> 
+    <div style="clear: both;"></div>
+    <input class="alignleftremove" type="text" ng-model="customerAll.postalcode"/><p class="alignleft">Postcode: {{ postalcode}}</p>
+    <div style="clear: both;"></div>
+    <input class="alignleftremove" type="text" ng-model="customerAll.city"/><p class="alignleft">Stad: {{ city}}</p>
+    <div style="clear: both;"></div>
+    <input class="alignleftremove" type="text" ng-model="customerAll.email"/><p class="alignleft">E-mail: {{ email}}</p>
+    <button class="button button1" ng-click="sendOrder(customerAll, cart)">Bestellen</button>
+    <div style="clear: both;"></div>
+    <p>test alle klantengegevens: {{customerAll}}</p>
+    <p> testen inhoud cart = {{cartIdCount}} </p>
+    <button ng-click="sendOrder()">test log </button>
+</div>
+
+<!--//alle cart producten incl klantgegevens moeten in een Bestellingobject gestoptworden-->

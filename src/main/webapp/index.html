@@ -1,0 +1,23 @@
+<!doctype html>
+<html ng-app="App">
+    <head>
+        <meta charset="utf-8">
+        <title>PetSupplies Dierenwinkel</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.js"></script>
+        <script src="scripts/app.js"></script>
+<!--        <script src="scripts/controllers/dataCartController.js"></script>
+        <script src="scripts/controllers/emptyCartController.js"></script>
+        <script src="scripts/controllers/countController.js"></script>-->
+        <script src="scripts/controllers/mainController.js"></script>
+<!--        <script src="scripts/services/dataService.js"></script>
+        <script src="scripts/services/counterService.js"></script>-->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    <body ng-controller="mainController">
+        <div>
+            <h1><img class="alignleft" src="img/petsupplies.png">Pet Supplies Dierenwinkel!<img class="alignright" src="img/petsupplies_2.png"></h1>
+            <a href="#/">Producten</a> <a href="#/cart">Winkelwagen</a>
+        </div>
+        <div ng-view></div>
+    </body>
+</html>
