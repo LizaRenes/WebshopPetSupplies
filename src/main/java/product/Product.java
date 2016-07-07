@@ -31,14 +31,16 @@ public class Product implements Serializable {
     private String description;
     private double price;
     private int amount = 1;
-
+    private String category;
+    
     public Product() {
     }
     
-    public Product(String nameArgument, String descriptionArgument, double priceArgument){
+    public Product(String nameArgument, String descriptionArgument, double priceArgument, String categoryArgument){
         name = nameArgument;
         description = descriptionArgument;
         price = priceArgument;
+        category = categoryArgument;
     }
 
     public String getName() {
@@ -72,7 +74,15 @@ public class Product implements Serializable {
     public void setAmount(int amount) {
         this.amount = amount;
     }
-
+    
+    public String getCategory(){
+        return category;
+    }
+    
+    public void setCategory(String category) {
+        this.category = category;
+    }
+    
     public Long getId() {
         return id;
     }

@@ -1,8 +1,10 @@
-<p>Producten</p>
-    <div class="normal" ng-repeat="product in productData">
+<h3><b>Producten</b></h3>
+    <a ng-click="filters.category = ''">clear filter</a>
+    <div class="normal" ng-repeat="product in productData | filter:filters">
+        <strong>{{product.name}}</strong>
+        <a ng-click="filters.category = product.category">{{product.category}}</a>
         <button class="alignrightcart" ng-click="addProduct(product)" >Toevoegen aan winkelwagen</button>
         <h2>{{product.name}}</h2>
-        <p> {{product.description}} - <em>&euro; {{product.price.toFixed(2)}}</em></p>
-           
+        <p> {{product.description}} - <b><font color = "#0000b3"><em>&euro; {{product.price.toFixed(2)}}</em></font></b></p>
     </div>
 <br>

@@ -67,9 +67,6 @@ app.controller('mainController', ['$scope', '$http', function ($scope, $http) {
                 return false;
         };
 
-
-
-// ALLE KLANTGEGEVENS VERZAMELEN IN 1 OBJECT (JSON FORMAAT)
         $scope.customerAll = {firstName: "", lastName: "", adress: "", postalcode: "", city: "", email: ""};
         $scope.customerAllLog = function () {
             console.log($scope.customerAll);
@@ -77,8 +74,6 @@ app.controller('mainController', ['$scope', '$http', function ($scope, $http) {
             console.log($scope.customerAll);
         };
 
-
-//        $scope.sendOrder = function (cartArg, customerArg) {
         $scope.sendOrder = function (cartArg, customerArg) {
             newOrder = {};
             newOrder.firstName = $scope.customerAll.firstName;
@@ -104,5 +99,20 @@ app.controller('mainController', ['$scope', '$http', function ($scope, $http) {
                                             "<hr />headers: " + header +
                                             "<hr />config: " + config;
             });
+            var bestellingGeplaatst = window.location = "http://localhost:8080/weshop10/#/producten2/";
+            var bestellingGeplaats = location.reload("http://localhost:8080/weshop10/#/producten2/");
         };
+            $scope.filters = {};
+            
     }]);
+
+
+
+
+
+//PROMPT FUNCTIE//
+//   var bestellingGeplaatst = confirm("Bedankt voor uw bestelling!");
+//            if (bestellingGeplaatst === true){
+//                location.reload("http://localhost:8080/weshop10/#/");
+//                 window.location = "http://localhost:8080/weshop10/#/";
+//            }

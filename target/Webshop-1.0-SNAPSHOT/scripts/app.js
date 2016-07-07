@@ -7,8 +7,11 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
                 .when("/cart", {
                     templateUrl: "cart.html"
                 })
-                .when("/#/Klantgegevens/", {
-                    templateUrl: "Klantgegevens.json"
-                })
-                ;
+//                .when("/#/Klantgegevens/", {
+//                    templateUrl: "Klantgegevens.json"
+//                })
+
+                .when("/producten2", {
+                    templateUrl: "producten2.html"
+                });
     }]);
